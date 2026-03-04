@@ -40,14 +40,12 @@ export default function App() {
   useEffect(() => {
     if (searchTerm === "") {
       setFilteredUsers(users);
-      return;
+    } else {
+      const filtered = users.filter((user) =>
+        user.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setFilteredUsers(filtered);
     }
-
-    const filtered = users.filter((user) =>
-      user.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
-    setFilteredUsers(filtered);
   }, [searchTerm, users]);
 
   function handleUserClick(user) {
