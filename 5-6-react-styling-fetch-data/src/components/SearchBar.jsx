@@ -1,21 +1,17 @@
-import React from "react";
-import { Form, InputGroup } from "react-bootstrap";
+// File: src/components/SearchBar.jsx
 
-function SearchBar({ searchTerm, onSearchChange }) {
+import { Form } from "react-bootstrap";
+
+export default function SearchBar({ searchTerm, onSearchChange }) {
   return (
-    // TODO 1.2: Set wrapper div className EXACTLY to "mb-4"
-    <div className="">
-      <InputGroup>
-        <InputGroup.Text>Search</InputGroup.Text>
-        <Form.Control
-          type="text"
-          placeholder="Search by name..."
-          value={searchTerm}
-          onChange={(e) => onSearchChange(e.target.value)}
-        />
-      </InputGroup>
+    // TODO 1.2: EXACT wrapper className
+    <div className="mb-4">
+      <Form.Control
+        type="text"
+        placeholder="Search users by name..."
+        value={searchTerm}
+        onChange={(e) => onSearchChange(e.target.value)}
+      />
     </div>
   );
 }
-
-export default SearchBar;
