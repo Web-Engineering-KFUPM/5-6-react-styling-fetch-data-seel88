@@ -60,11 +60,11 @@ export default function App() {
     if (searchTerm === "") {
       setFilteredUsers(users);
     } else {
-      const lowerCaseSearch = searchTerm.toLowerCase();
-      const filtered = users.filter((user) => 
-        user.name.toLowerCase().includes(lowerCaseSearch)
+      setFilteredUsers(
+        users.filter((user) =>
+          user.name.toLowerCase().includes(searchTerm.toLowerCase())
+        )
       );
-      setFilteredUsers(filtered);
     }
   }, [searchTerm, users]);
 
